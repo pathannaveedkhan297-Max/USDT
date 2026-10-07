@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>27. Digital Clock</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#0f2027,#2c5364)}
+.box{background:#111;padding:40px;border-radius:20px;text-align:center;box-shadow:0 15px 35px #0008}h2{color:#00e5ff}
+#clock{font-size:55px;font-weight:bold;color:white;letter-spacing:3px;text-shadow:0 0 15px #00e5ff}
+#date{color:#bbb;margin-top:15px;font-size:16px}
+</style></head>
+<body><div class="box"><h2>🕐 Digital Clock</h2><div id="clock">00:00:00</div><div id="date"></div></div>
+<script>
+function update(){let d=new Date(),p=n=>String(n).padStart(2,"0");
+clock.textContent=`${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+date.textContent=d.toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"});}
+setInterval(update,1000);update();
+</script></body></html>

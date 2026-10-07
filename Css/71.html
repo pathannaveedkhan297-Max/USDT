@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>71. Dark Mode</title>
+<style>
+:root{--bg:#fff7ed;--text:#292524;--box:#ffedd5}
+[data-theme="dark"]{--bg:#18181b;--text:#f4f4f5;--box:#27272a}
+body{margin:0;padding:50px;font-family:Arial;text-align:center;background:var(--bg);color:var(--text)}
+.card{background:var(--box);padding:25px;margin:30px auto;max-width:300px;border-radius:15px}
+button{padding:12px 20px;border:0;border-radius:20px;background:#ea580c;color:white;cursor:pointer}
+h1{color:#ea580c}
+</style>
+</head>
+<body>
+<h1>Theme Switcher</h1>
+<button onclick="document.body.dataset.theme=document.body.dataset.theme==='dark'?'':'dark'">Change Theme</button>
+<div class="card">
+<h2>Night Mode</h2>
+<p>This page uses CSS variables for colors.</p>
+</div>
+</body>
+</html>

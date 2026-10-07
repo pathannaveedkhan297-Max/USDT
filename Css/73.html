@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>73. CSS Functions</title>
+<style>
+body{margin:0;padding:25px;font-family:Arial;background:#eff6ff;color:#1e3a8a}
+h1{font-size:clamp(1.8rem,6vw,3.5rem);text-align:center}
+.container{width:min(92%,600px);margin:30px auto}
+.card{background:#dbeafe;padding:max(15px,3vw);border-radius:15px;margin:20px 0}
+.card h2{font-size:clamp(1.2rem,3vw,2rem)}
+.card p{font-size:max(14px,1.5vw)}
+footer{padding:min(30px,5vw);background:#1e40af;color:white;text-align:center}
+</style>
+</head>
+<body>
+<h1>Smart CSS</h1>
+<div class="container">
+<div class="card">
+<h2>Flexible Design</h2>
+<p>This card uses min(), max(), and clamp() to adjust its size and text.</p>
+</div>
+<div class="card">
+<h2>Responsive Layout</h2>
+<p>The design adapts smoothly to different screen sizes.</p>
+</div>
+</div>
+<footer>Responsive CSS Functions</footer>
+</body>
+</html>

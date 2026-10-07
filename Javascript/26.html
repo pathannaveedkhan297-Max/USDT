@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>26. Image Slider</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#ff512f,#dd2476)}
+.box{background:white;padding:25px;border-radius:20px;text-align:center;box-shadow:0 15px 35px #0005}h2{color:#444}
+img{width:350px;height:230px;object-fit:cover;border-radius:15px;box-shadow:0 5px 15px #0004}
+button{margin-top:18px;padding:12px 30px;border:0;border-radius:8px;background:#dd2476;color:white;font-size:16px;cursor:pointer}
+button:hover{background:#ff512f;transform:scale(1.05)}#num{color:#777;margin-top:10px}
+</style></head>
+<body><div class="box"><h2>🖼️ Image Gallery</h2>
+<img id="pic" src="JINWOO.png"><br><button onclick="next()">Next Image ➜</button><div id="num">Image 1</div></div>
+<script>
+const images=["JINWOO.png","JINWOOSUNG.png","JINWO.png"];let i=0;
+function next(){i=(i+1)%images.length;document.getElementById("pic").src=images[i];document.getElementById("num").textContent=`Image ${i+1}`;}
+</script></body></html>

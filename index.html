@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Practical Programs</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #dbeafe, #f8fafc);
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h2 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: #64748b;
+        }
+
+        .folders {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+            min-height: 52px;
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 9px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .html-card h3 { color: #e34c26; }
+        .css-card h3 { color: #264de4; }
+        .js-card h3 { color: #b59f00; }
+
+        .html-card .btn { background: #e34c26; }
+        .css-card .btn { background: #264de4; }
+        .js-card .btn { background: #b59f00; }
+
+        .btn:hover { opacity: 0.85; }
+
+        footer {
+            margin-top: 60px;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 800px) {
+            .folders {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Development Practical Programs</h1>
+    <p>HTML &nbsp; | &nbsp; CSS &nbsp; | &nbsp; JavaScript</p>
+</header>
+
+<main class="container">
+
+    <div class="title">
+        <h2>Practical Programs Index</h2>
+        <p>Select a folder below to view its programs.</p>
+    </div>
+
+    <div class="folders">
+
+        <div class="card html-card">
+            <div class="icon">🌐</div>
+            <h3>HTML</h3>
+            <p>HTML practical programs covering basic elements, forms, tables, multimedia and more.</p>
+            <a href="Html/index.html" class="btn">Open HTML Programs</a>
+        </div>
+
+        <div class="card css-card">
+            <div class="icon">🎨</div>
+            <h3>CSS</h3>
+            <p>CSS practical programs covering selectors, layouts, positioning, animations and responsive design.</p>
+            <a href="Css/index.html" class="btn">Open CSS Programs</a>
+        </div>
+
+        <div class="card js-card">
+            <div class="icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>JavaScript practical programs covering variables, functions, arrays, DOM, events and more.</p>
+            <a href="Javascript/index.html" class="btn">Open JavaScript Programs</a>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>Web Development Laboratory &copy; 2026</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>33. Quiz Application</title>
+<style>
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#36d1dc,#5b86e5)}
+.box{background:white;padding:30px;border-radius:20px;width:380px;text-align:center;box-shadow:0 15px 30px #0004}h2{color:#444}
+button{display:block;width:100%;margin:10px 0;padding:12px;border:0;border-radius:8px;background:#5b86e5;color:white;cursor:pointer}
+button:hover{background:#36d1dc;transform:scale(1.02)}#score{font-size:20px;font-weight:bold;color:#27ae60;margin-top:20px}
+</style></head>
+<body><div class="box"><h2>🧠 Quick Quiz</h2><div id="quiz"></div><div id="score"></div></div>
+<script>
+const questions=[{q:"Capital of France?",o:["Paris","London","Rome"],a:"Paris"},{q:"2 + 2 = ?",o:["3","4","5"],a:"4"},{q:"JS stands for?",o:["JavaScript","JavaSource","JustScript"],a:"JavaScript"}];let i=0,score=0;
+function show(){if(i==questions.length){quiz.innerHTML="<h3>🎉 Quiz Complete!</h3>";scoreEl();return;}let q=questions[i];quiz.innerHTML=`<h3>${q.q}</h3>`+q.o.map(x=>`<button onclick="answer('${x}')">${x}</button>`).join("");}
+function answer(x){if(x==questions[i].a)score++;i++;show();}
+function scoreEl(){document.getElementById("score").textContent=`Score: ${score} / ${questions.length}`;}
+show();
+</script></body></html>

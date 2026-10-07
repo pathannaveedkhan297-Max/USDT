@@ -1,0 +1,307 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>65. CSS Transitions</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1e293b
+            );
+
+            color: white;
+        }
+
+
+        /* Heading */
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 36px;
+            color: #38bdf8;
+        }
+
+
+        .description {
+            margin-bottom: 40px;
+            color: #cbd5e1;
+            text-align: center;
+        }
+
+
+        /* Transition Area */
+
+        .stage {
+
+            width: 90%;
+            max-width: 800px;
+
+            padding: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #1e293b;
+
+            border: 2px solid #334155;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.3);
+
+        }
+
+
+        /* Main Box */
+
+        .transition-box {
+
+            width: 150px;
+            height: 150px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #38bdf8;
+
+            color: #082f49;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            /*
+                CSS TRANSITION
+            */
+
+            transition:
+                width 0.7s ease,
+                height 0.7s ease,
+                background-color 0.7s ease,
+                border-radius 0.7s ease,
+                transform 0.7s ease,
+                box-shadow 0.7s ease;
+
+        }
+
+
+        /* Hover Effect */
+
+        .transition-box:hover {
+
+            width: 280px;
+
+            height: 180px;
+
+            background: #a78bfa;
+
+            border-radius: 50px;
+
+            transform:
+                rotate(-5deg)
+                scale(1.05);
+
+            box-shadow:
+                0 15px 30px rgba(167, 139, 250, 0.4);
+
+        }
+
+
+        /* Information Cards */
+
+        .info-container {
+
+            display: flex;
+
+            gap: 20px;
+
+            margin-top: 35px;
+
+            width: 90%;
+            max-width: 800px;
+
+        }
+
+
+        .info {
+
+            flex: 1;
+
+            padding: 20px;
+
+            text-align: center;
+
+            background: #f8fafc;
+
+            color: #334155;
+
+            border-radius: 12px;
+
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+
+        }
+
+
+        .info:hover {
+
+            transform: translateY(-8px);
+
+            background: #e0f2fe;
+
+        }
+
+
+        .info h3 {
+
+            margin-top: 0;
+
+            color: #0369a1;
+
+        }
+
+
+        .info p {
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* Responsive Design */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .stage {
+                padding: 35px 15px;
+            }
+
+            .transition-box {
+                width: 120px;
+                height: 120px;
+            }
+
+            .transition-box:hover {
+                width: 220px;
+                height: 150px;
+            }
+
+            .info-container {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>CSS Transition Demo</h1>
+
+
+    <p class="description">
+        Move your mouse over the box to see smooth CSS transitions.
+    </p>
+
+
+    <!-- Transition Demonstration -->
+
+    <div class="stage">
+
+        <div class="transition-box">
+
+            Hover Me
+
+        </div>
+
+    </div>
+
+
+    <!-- Explanation -->
+
+    <div class="info-container">
+
+
+        <div class="info">
+
+            <h3>Size</h3>
+
+            <p>
+                The width and height smoothly
+                change when the box is hovered.
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <h3>Color</h3>
+
+            <p>
+                The background color gradually
+                changes from blue to purple.
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <h3>Transform</h3>
+
+            <p>
+                The element rotates and scales
+                smoothly during the transition.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+```
+

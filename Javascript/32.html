@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>32. To-Do List</title>
+<style>
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#8e2de2,#4a00e0)}
+.box{background:white;padding:30px;border-radius:20px;width:380px;box-shadow:0 15px 35px #0005}h2{text-align:center;color:#444}
+input{width:75%;padding:12px;border:1px solid #ddd;border-radius:8px}button{padding:12px;background:#4a00e0;color:white;border:0;border-radius:8px;cursor:pointer}
+ul{padding:0;list-style:none}li{background:#f3f0ff;margin:8px 0;padding:12px;border-radius:8px;display:flex;justify-content:space-between}
+.remove{color:#e74c3c;cursor:pointer;font-weight:bold}li:hover{background:#e8ddff}
+</style></head>
+<body><div class="box"><h2>📝 My To-Do List</h2>
+<input id="taskInput" placeholder="Enter a task"><button onclick="addTask()">Add</button><ul id="list"></ul>
+<script>
+function addTask(){let i=document.getElementById("taskInput"),t=i.value.trim();if(!t)return;
+let li=document.createElement("li"),x=document.createElement("span");li.textContent=t;x.textContent="✕";x.className="remove";
+x.onclick=()=>li.remove();li.appendChild(x);document.getElementById("list").appendChild(li);i.value="";}
+</script></div></body></html>

@@ -1,0 +1,266 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Tech News Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #202124;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #172554, #2563eb);
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 16px;
+            color: #dbeafe;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Main Grid */
+        .news-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 35px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 25px;
+        }
+
+        /* Articles */
+        .article {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .featured {
+            grid-row: span 2;
+        }
+
+        .article img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .featured img {
+            height: 320px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .category {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            margin: 5px 0 12px;
+            font-size: 28px;
+            color: #172554;
+        }
+
+        .content h3 {
+            margin: 5px 0 10px;
+            color: #1e3a8a;
+            font-size: 21px;
+        }
+
+        .content p {
+            line-height: 1.6;
+            color: #5f6368;
+        }
+
+        .date {
+            font-size: 13px;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                grid-row: auto;
+            }
+
+            .featured img {
+                height: 230px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>TechPulse Daily</h1>
+        <p>Technology, Innovation & Digital Trends</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Technology</a>
+        <a href="#">Business</a>
+        <a href="#">Science</a>
+        <a href="#">Reviews</a>
+    </nav>
+
+    <main class="news-container">
+
+        <!-- Featured Article -->
+        <article class="article featured">
+            <img src="https://picsum.photos/id/180/900/500" alt="Technology">
+
+            <div class="content">
+                <span class="category">FEATURED</span>
+
+                <h2>The Future of Technology Is Closer Than We Think</h2>
+
+                <p>
+                    New technologies are changing the way people work,
+                    communicate and interact with the digital world.
+                    From artificial intelligence to smart devices,
+                    innovation continues to transform everyday life.
+                </p>
+
+                <div class="date">
+                    Published: September 21, 2026
+                </div>
+            </div>
+        </article>
+
+        <!-- Second Article -->
+        <article class="article">
+            <img src="https://picsum.photos/id/0/600/350" alt="Computer">
+
+            <div class="content">
+                <span class="category">TECHNOLOGY</span>
+
+                <h3>How Modern Computers Are Becoming Smarter</h3>
+
+                <p>
+                    Discover how advanced computing technologies
+                    are improving performance and productivity.
+                </p>
+
+                <div class="date">
+                    September 20, 2026
+                </div>
+            </div>
+        </article>
+
+        <!-- Third Article -->
+        <article class="article">
+            <img src="https://picsum.photos/id/1/600/350" alt="Laptop">
+
+            <div class="content">
+                <span class="category">INNOVATION</span>
+
+                <h3>Digital Innovation Changing Everyday Life</h3>
+
+                <p>
+                    Explore some of the latest digital innovations
+                    that are becoming part of our daily routines.
+                </p>
+
+                <div class="date">
+                    September 19, 2026
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechPulse Daily</p>
+        <p>Stay informed. Stay connected.</p>
+    </footer>
+
+</body>
+</html>
+```
+

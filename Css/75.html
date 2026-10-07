@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>75. Complete Responsive Website</title>
+<style>
+*{box-sizing:border-box;margin:0;font-family:Verdana}
+header{background:#312e81;color:white;padding:18px;text-align:center}
+nav a{color:white;margin:10px;text-decoration:none}
+.hero{background:#7c3aed;color:white;text-align:center;padding:60px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;padding:25px}
+.item{background:#ede9fe;padding:25px;text-align:center;border-radius:12px}
+.flex{display:flex;flex-wrap:wrap;gap:15px;padding:25px;justify-content:center}
+.flex div{background:#c4b5fd;padding:20px;border-radius:10px;flex:1 1 180px;text-align:center}
+footer{background:#1e1b4b;color:white;text-align:center;padding:20px}
+button{padding:10px 18px;margin-top:15px;border:0;border-radius:20px}
+@media(max-width:600px){header{padding:15px}.hero{padding:40px 15px}nav a{display:inline-block}.grid,.flex{padding:15px}}
+</style>
+</head>
+<body>
+<header><h2>CreativeHub</h2><nav><a href="#">Home</a><a href="#">Work</a><a href="#">About</a></nav></header>
+<section class="hero"><h1>Build Your Ideas</h1><p>A modern website using Grid and Flexbox.</p><button>Explore Now</button></section>
+<section class="grid"><div class="item">Web Design</div><div class="item">Development</div><div class="item">Photography</div></section>
+<section class="flex"><div>Creative</div><div>Modern</div><div>Responsive</div></section>
+<footer>© 2026 CreativeHub</footer>
+</body>
+</html>

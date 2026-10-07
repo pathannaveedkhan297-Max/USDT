@@ -1,0 +1,407 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>62. Flexbox Alignment and Ordering</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f8f9fc;
+            color: #202124;
+        }
+
+        /* Page Header */
+        header {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Alignment Section */
+        .alignment-section {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .alignment-section h2,
+        .ordering-section h2 {
+            color: #b4235a;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /*
+            FLEXBOX ALIGNMENT
+            justify-content controls horizontal alignment
+            align-items controls vertical alignment
+        */
+
+        .flex-container {
+
+            height: 180px;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 20px;
+
+            background: #ffe8ef;
+
+            border: 2px dashed #dd2476;
+
+            border-radius: 15px;
+        }
+
+        .box {
+
+            width: 130px;
+
+            padding: 25px 10px;
+
+            text-align: center;
+
+            background: #dd2476;
+
+            color: white;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            background: #b4235a;
+        }
+
+        /* Ordering Section */
+        .ordering-section {
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 40px auto;
+
+        }
+
+        .order-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            padding: 25px;
+
+            background: #eef2ff;
+
+            border-radius: 15px;
+
+            border: 2px solid #6366f1;
+
+        }
+
+        .order-box {
+
+            flex: 1;
+
+            min-width: 180px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            background: #6366f1;
+
+            color: white;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+        }
+
+        /*
+            FLEXBOX ORDER PROPERTY
+
+            Default order is 0.
+            Smaller values appear first.
+        */
+
+        .item-one {
+            order: 4;
+            background: #ef4444;
+        }
+
+        .item-two {
+            order: 1;
+            background: #22c55e;
+        }
+
+        .item-three {
+            order: 3;
+            background: #f59e0b;
+        }
+
+        .item-four {
+            order: 2;
+            background: #3b82f6;
+        }
+
+        /* Information Cards */
+        .info {
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 40px auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: stretch;
+
+            gap: 20px;
+
+        }
+
+        .info-card {
+
+            flex: 1;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+            text-align: center;
+
+        }
+
+        .info-card h3 {
+            color: #6366f1;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+
+            margin-top: 50px;
+
+            padding: 25px;
+
+            background: #1e1b4b;
+
+            color: white;
+
+            text-align: center;
+
+        }
+
+        /* Responsive Design */
+        @media (max-width: 650px) {
+
+            .flex-container {
+                height: auto;
+
+                flex-direction: column;
+
+                justify-content: center;
+            }
+
+            .box {
+                width: 80%;
+            }
+
+            .info {
+                flex-direction: column;
+            }
+
+            .order-container {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>Flexbox Playground</h1>
+
+        <p>Understanding Alignment, Spacing and Item Ordering</p>
+
+    </header>
+
+
+    <!-- Alignment Demonstration -->
+
+    <section class="alignment-section">
+
+        <h2>Flexbox Alignment</h2>
+
+        <div class="flex-container">
+
+            <div class="box">
+                Home
+            </div>
+
+            <div class="box">
+                About
+            </div>
+
+            <div class="box">
+                Services
+            </div>
+
+            <div class="box">
+                Contact
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Ordering Demonstration -->
+
+    <section class="ordering-section">
+
+        <h2>Flexbox Ordering</h2>
+
+        <div class="order-container">
+
+            <div class="order-box item-one">
+                Original Item 1<br>
+                <small>order: 4</small>
+            </div>
+
+            <div class="order-box item-two">
+                Original Item 2<br>
+                <small>order: 1</small>
+            </div>
+
+            <div class="order-box item-three">
+                Original Item 3<br>
+                <small>order: 3</small>
+            </div>
+
+            <div class="order-box item-four">
+                Original Item 4<br>
+                <small>order: 2</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Explanation Cards -->
+
+    <section class="info">
+
+        <div class="info-card">
+
+            <h3>justify-content</h3>
+
+            <p>
+                Controls how flex items are positioned
+                along the main axis.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>align-items</h3>
+
+            <p>
+                Controls the alignment of items
+                along the cross axis.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>order</h3>
+
+            <p>
+                Changes the visual position of flex
+                items without changing the HTML.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Flexbox Playground
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

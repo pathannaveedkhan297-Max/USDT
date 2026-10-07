@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Practical Programs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .section-title {
+            background: #1e293b;
+            color: white;
+            padding: 15px 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .program {
+            background: white;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .program:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .program a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .number {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 5px 9px;
+            border-radius: 5px;
+            margin-right: 8px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Practical Programs</h1>
+    <p>67 JavaScript Lab Experiments</p>
+</header>
+
+<div class="container">
+
+    <!-- Basic JavaScript Programs -->
+    <h2 class="section-title">
+        Basic JavaScript Programs
+    </h2>
+
+    <div class="program-list">
+
+        <div class="program">
+            <a href="1.js">
+                <span class="number">01</span>
+                Hello World
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="2.js">
+                <span class="number">02</span>
+                Arithmetic Operations
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="3.js">
+                <span class="number">03</span>
+                Largest of Three Numbers
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="4.js">
+                <span class="number">04</span>
+                Even or Odd
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="5.js">
+                <span class="number">05</span>
+                Positive, Negative or Zero
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="6.js">
+                <span class="number">06</span>
+                Factorial of a Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="7.js">
+                <span class="number">07</span>
+                Fibonacci Series
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="8.js">
+                <span class="number">08</span>
+                Prime Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="9.js">
+                <span class="number">09</span>
+                Palindrome Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="10.js">
+                <span class="number">10</span>
+                Reverse a Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="11.js">
+                <span class="number">11</span>
+                Sum of Digits
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="12.js">
+                <span class="number">12</span>
+                Largest and Smallest in Array
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="13.js">
+                <span class="number">13</span>
+                Sort an Array
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="14.js">
+                <span class="number">14</span>
+                Sum and Average of Array
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="15.js">
+                <span class="number">15</span>
+                JavaScript Functions
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="16.js">
+                <span class="number">16</span>
+                Arrow Functions
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="17.js">
+                <span class="number">17</span>
+                Strings and String Methods
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="18.js">
+                <span class="number">18</span>
+                Arrays and Array Methods
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="19.js">
+                <span class="number">19</span>
+                JavaScript Objects
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="20.js">
+                <span class="number">20</span>
+                Date and Math Objects
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- DOM and Event Based Experiments -->
+    <h2 class="section-title">
+        DOM & Event-Based Experiments
+    </h2>
+
+    <div class="program-list">
+
+        <div class="program">
+            <a href="22.html">
+                <span class="number">22</span>
+                Change Text using JavaScript
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="23.html">
+                <span class="number">23</span>
+                Change Background Color
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="24.html">
+                <span class="number">24</span>
+                Button Click Event
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="25.html">
+                <span class="number">25</span>
+                Show / Hide Element
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="26.html">
+                <span class="number">26</span>
+                Change Image on Button Click
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="27.html">
+                <span class="number">27</span>
+                Digital Clock
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="28.html">
+                <span class="number">28</span>
+                Simple Calculator
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="29.html">
+                <span class="number">29</span>
+                Number Guessing Game
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="30.html">
+                <span class="number">30</span>
+                Form Validation
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="31.html">
+                <span class="number">31</span>
+                Validate Name, Email, Phone and Password
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="32.html">
+                <span class="number">32</span>
+                To-Do List
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="33.html">
+                <span class="number">33</span>
+                Quiz Application
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="34.html">
+                <span class="number">34</span>
+                Counter Application
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="35.html">
+                <span class="number">35</span>
+                Stopwatch
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="36.html">
+                <span class="number">36</span>
+                Countdown Timer
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Advanced JavaScript -->
+    <h2 class="section-title">
+        Advanced JavaScript Lab Questions
+    </h2>
+
+    <div class="program-list">
+
+        <div class="program">
+            <a href="38.js">
+                <span class="number">38</span>
+                ES6 let, const, Template Literals and Destructuring
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="39.js">
+                <span class="number">39</span>
+                Spread and Rest Operators
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="40.js">
+                <span class="number">40</span>
+                Classes and Objects
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="41.js">
+                <span class="number">41</span>
+                JavaScript Inheritance
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="42.js">
+                <span class="number">42</span>
+                Callbacks, Promises and Async/Await
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="43.html">
+                <span class="number">43</span>
+                Fetch Data from API
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="44.html">
+                <span class="number">44</span>
+                Display API Data Dynamically
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="45.html">
+                <span class="number">45</span>
+                Local Storage
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="46.html">
+                <span class="number">46</span>
+                Responsive Login Form
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="47.html">
+                <span class="number">47</span>
+                Complete Interactive Webpage
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Additional JavaScript Programs -->
+    <h2 class="section-title">
+        Additional JavaScript Programs
+    </h2>
+
+    <div class="program-list">
+
+        <div class="program">
+            <a href="48.js">
+                <span class="number">48</span>
+                Swap Two Numbers
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="49.js">
+                <span class="number">49</span>
+                GCD of Two Numbers
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="50.js">
+                <span class="number">50</span>
+                LCM of Two Numbers
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="51.js">
+                <span class="number">51</span>
+                Armstrong Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="52.js">
+                <span class="number">52</span>
+                Perfect Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="53.js">
+                <span class="number">53</span>
+                Multiplication Table
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="54.js">
+                <span class="number">54</span>
+                Power of a Number
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="55.js">
+                <span class="number">55</span>
+                Count Digits
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="56.js">
+                <span class="number">56</span>
+                Second Largest Element
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="57.js">
+                <span class="number">57</span>
+                Remove Duplicate Elements
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="58.js">
+                <span class="number">58</span>
+                Merge Two Arrays
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="59.js">
+                <span class="number">59</span>
+                Frequency of Array Elements
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="60.js">
+                <span class="number">60</span>
+                Common Elements in Two Arrays
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="61.js">
+                <span class="number">61</span>
+                Reverse a String
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="62.js">
+                <span class="number">62</span>
+                String Palindrome
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="63.js">
+                <span class="number">63</span>
+                Count Vowels and Consonants
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="64.js">
+                <span class="number">64</span>
+                Count Words in a String
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="65.js">
+                <span class="number">65</span>
+                Character Frequency
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="66.js">
+                <span class="number">66</span>
+                Regular Expressions
+            </a>
+        </div>
+
+        <div class="program">
+            <a href="67.js">
+                <span class="number">67</span>
+                Email Validation using Regex
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>JavaScript Practical Lab | 67 Programs</p>
+    <p>HTML + CSS + JavaScript</p>
+</footer>
+
+</body>
+</html>

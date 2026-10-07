@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>29. Number Guessing Game</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#fc466b,#3f5efb)}
+.box{background:white;padding:35px;border-radius:20px;width:350px;text-align:center;box-shadow:0 15px 35px #0005}h2{color:#444}
+input{width:90%;padding:12px;border:1px solid #ddd;border-radius:8px;margin:12px 0;font-size:16px}
+button{padding:12px 30px;border:0;border-radius:8px;background:#3f5efb;color:white;cursor:pointer}button:hover{background:#fc466b}
+#msg{margin-top:20px;font-weight:bold;color:#3f5efb}
+</style></head>
+<body><div class="box"><h2>🎯 Guess The Number</h2><p>Choose a number from 1 to 100</p>
+<input id="guess" type="number" min="1" max="100" placeholder="Enter your guess"><button onclick="check()">Guess</button><p id="msg"></p></div>
+<script>
+const target=Math.floor(Math.random()*100)+1;let attempts=0;
+function check(){let g=Number(document.getElementById("guess").value),m=document.getElementById("msg");if(!g){m.textContent="⚠️ Enter a number!";return;}attempts++;
+if(g===target){m.textContent=`🎉 Correct! ${target} in ${attempts} attempts.`;}else if(g<target)m.textContent="⬆️ Too low! Try again.";else m.textContent="⬇️ Too high! Try again.";}
+</script></body></html>

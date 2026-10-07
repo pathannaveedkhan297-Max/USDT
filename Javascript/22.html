@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>22. Change Text</title>
+<style>
+body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;font-family:Arial;background:linear-gradient(135deg,#8e2de2,#4a00e0)}
+.card{background:white;width:360px;padding:40px;border-radius:22px;text-align:center;box-shadow:0 15px 35px #0006}
+h2{color:#4a00e0;margin-bottom:25px}#text{padding:18px;background:#f2eaff;border-radius:12px;color:#555;font-size:18px}
+button{margin-top:20px;padding:13px 28px;border:0;border-radius:25px;background:#4a00e0;color:white;font-size:16px;cursor:pointer}
+button:hover{background:#3500a8;transform:scale(1.05)}
+</style></head>
+<body><div class="card"><h2>✨ Text Changer</h2>
+<p id="text">Welcome! This is the original text.</p>
+<button onclick="changeText()">Change Text</button></div>
+<script>
+function changeText(){
+document.getElementById("text").textContent="🎉 Text changed successfully!";
+}
+</script></body></html>

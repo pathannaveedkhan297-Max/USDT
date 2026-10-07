@@ -1,0 +1,475 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>63. Responsive Product Grid</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(120deg, #064e3b, #0f766e);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #ccfbf1;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #065f46;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Grid */
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 25px;
+
+        }
+
+        /* Product Cards */
+        .product {
+
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+        }
+
+        .product:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.14);
+
+        }
+
+        .product-image {
+
+            height: 150px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #d1fae5;
+
+            font-size: 55px;
+
+        }
+
+        .product-content {
+
+            padding: 20px;
+
+            text-align: center;
+
+        }
+
+        .product-content h3 {
+
+            margin: 0 0 8px;
+
+            color: #065f46;
+
+        }
+
+        .product-content p {
+
+            color: #64748b;
+
+            font-size: 14px;
+
+        }
+
+        .price {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 6px 14px;
+
+            background: #059669;
+
+            color: white;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+
+        }
+
+        /* Tablet */
+        @media (max-width: 950px) {
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+            header h1 {
+
+                font-size: 30px;
+
+            }
+
+        }
+
+        /* Mobile */
+        @media (max-width: 550px) {
+
+            .product-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .container {
+
+                width: 88%;
+
+            }
+
+            header {
+
+                padding: 30px 15px;
+
+            }
+
+            header h1 {
+
+                font-size: 26px;
+
+            }
+
+        }
+
+        /* Small Mobile */
+        @media (max-width: 350px) {
+
+            .product-content {
+
+                padding: 15px;
+
+            }
+
+            .product-image {
+
+                height: 120px;
+
+                font-size: 45px;
+
+            }
+
+        }
+
+        /* Footer */
+        footer {
+
+            margin-top: 50px;
+
+            padding: 25px;
+
+            background: #022c22;
+
+            color: #d1fae5;
+
+            text-align: center;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>GreenCart Store</h1>
+
+        <p>Discover simple and useful products for everyday life</p>
+
+    </header>
+
+
+    <!-- Products -->
+
+    <main class="container">
+
+        <h2>Popular Products</h2>
+
+
+        <div class="product-grid">
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    🎧
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Wireless Headphones</h3>
+
+                    <p>
+                        Comfortable headphones with
+                        high-quality wireless sound.
+                    </p>
+
+                    <span class="price">
+                        ₹1,999
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    ⌚
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Smart Watch</h3>
+
+                    <p>
+                        Track your activities and
+                        stay connected throughout the day.
+                    </p>
+
+                    <span class="price">
+                        ₹2,499
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    🎒
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Travel Backpack</h3>
+
+                    <p>
+                        Lightweight and spacious backpack
+                        for work and travel.
+                    </p>
+
+                    <span class="price">
+                        ₹1,299
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    📷
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Digital Camera</h3>
+
+                    <p>
+                        Capture memorable moments
+                        with a compact digital camera.
+                    </p>
+
+                    <span class="price">
+                        ₹8,999
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    💡
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Desk Lamp</h3>
+
+                    <p>
+                        Modern LED lighting for your
+                        study or workspace.
+                    </p>
+
+                    <span class="price">
+                        ₹799
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    🖱️
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Wireless Mouse</h3>
+
+                    <p>
+                        Smooth and comfortable mouse
+                        for everyday computer use.
+                    </p>
+
+                    <span class="price">
+                        ₹599
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    🔊
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Bluetooth Speaker</h3>
+
+                    <p>
+                        Portable speaker with clear
+                        audio and powerful bass.
+                    </p>
+
+                    <span class="price">
+                        ₹1,499
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    ⌨️
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Mechanical Keyboard</h3>
+
+                    <p>
+                        Responsive keys and a stylish
+                        design for your workspace.
+                    </p>
+
+                    <span class="price">
+                        ₹2,199
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 GreenCart Store | Responsive Web Design
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
+

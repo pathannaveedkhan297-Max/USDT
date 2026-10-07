@@ -1,0 +1,536 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>66. CSS 2D and 3D Transformations</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            background: #f8fafc;
+
+            color: #1e293b;
+        }
+
+
+        /* -----------------------------
+           PAGE HEADER
+        ----------------------------- */
+
+        header {
+
+            background: linear-gradient(
+                135deg,
+                #be123c,
+                #7c2d12
+            );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px;
+
+        }
+
+        header h1 {
+
+            margin: 0 0 10px;
+
+            font-size: 38px;
+
+        }
+
+        header p {
+
+            margin: 0;
+
+            color: #ffe4e6;
+
+        }
+
+
+        /* -----------------------------
+           MAIN CONTENT
+        ----------------------------- */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 50px auto;
+
+        }
+
+
+        .container > h2 {
+
+            text-align: center;
+
+            color: #9f1239;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        /* -----------------------------
+           TRANSFORMATION GRID
+        ----------------------------- */
+
+        .transform-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 35px;
+
+            align-items: center;
+
+        }
+
+
+        /* -----------------------------
+           TRANSFORMATION CARDS
+        ----------------------------- */
+
+        .card {
+
+            min-height: 250px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: white;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.08);
+
+            overflow: hidden;
+
+        }
+
+
+        .shape {
+
+            width: 110px;
+
+            height: 110px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #e11d48;
+
+            color: white;
+
+            border-radius: 15px;
+
+            font-weight: bold;
+
+            transition:
+                transform 0.8s ease,
+                background-color 0.8s ease,
+                border-radius 0.8s ease;
+
+            cursor: pointer;
+
+        }
+
+
+        .card h3 {
+
+            margin: 25px 0 5px;
+
+            color: #881337;
+
+        }
+
+
+        .card p {
+
+            margin: 0;
+
+            padding: 0 15px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 14px;
+
+        }
+
+
+        /* -----------------------------
+           2D TRANFORMATIONS
+        ----------------------------- */
+
+
+        /* Translate */
+
+        .translate:hover {
+
+            transform:
+                translate(25px, -15px);
+
+            background: #be123c;
+
+        }
+
+
+        /* Rotate */
+
+        .rotate:hover {
+
+            transform:
+                rotate(45deg);
+
+            background: #c2410c;
+
+        }
+
+
+        /* Scale */
+
+        .scale:hover {
+
+            transform:
+                scale(1.35);
+
+            background: #9333ea;
+
+        }
+
+
+        /* Skew */
+
+        .skew:hover {
+
+            transform:
+                skew(-15deg, 10deg);
+
+            background: #2563eb;
+
+        }
+
+
+        /* -----------------------------
+           3D TRANSFORM
+        ----------------------------- */
+
+        .scene {
+
+            perspective: 700px;
+
+        }
+
+
+        .rotate3d:hover {
+
+            transform:
+                rotateX(35deg)
+                rotateY(45deg)
+                rotateZ(10deg);
+
+            background: #059669;
+
+            border-radius: 50%;
+
+        }
+
+
+        /* -----------------------------
+           INFORMATION SECTION
+        ----------------------------- */
+
+        .information {
+
+            margin-top: 50px;
+
+            padding: 30px;
+
+            background: #fff1f2;
+
+            border-left: 6px solid #e11d48;
+
+            border-radius: 10px;
+
+        }
+
+
+        .information h2 {
+
+            margin-top: 0;
+
+            color: #9f1239;
+
+        }
+
+
+        .information ul {
+
+            line-height: 2;
+
+            color: #475569;
+
+        }
+
+
+        /* -----------------------------
+           FOOTER
+        ----------------------------- */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 25px;
+
+            background: #1e293b;
+
+            color: #cbd5e1;
+
+            text-align: center;
+
+        }
+
+
+        /* -----------------------------
+           MOBILE
+        ----------------------------- */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+
+                font-size: 28px;
+
+            }
+
+            .container {
+
+                width: 85%;
+
+            }
+
+            .transform-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>CSS Transformation Lab</h1>
+
+        <p>
+            Explore 2D and 3D transformations using CSS
+        </p>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="container">
+
+        <h2>
+            Hover Over Each Shape
+        </h2>
+
+
+        <div class="transform-grid">
+
+
+            <!-- Translate -->
+
+            <div class="card">
+
+                <div class="shape translate">
+                    Move
+                </div>
+
+                <h3>Translate</h3>
+
+                <p>
+                    Moves an element horizontally
+                    or vertically.
+                </p>
+
+            </div>
+
+
+            <!-- Rotate -->
+
+            <div class="card">
+
+                <div class="shape rotate">
+                    Turn
+                </div>
+
+                <h3>Rotate</h3>
+
+                <p>
+                    Rotates an element around
+                    its center point.
+                </p>
+
+            </div>
+
+
+            <!-- Scale -->
+
+            <div class="card">
+
+                <div class="shape scale">
+                    Grow
+                </div>
+
+                <h3>Scale</h3>
+
+                <p>
+                    Increases or decreases
+                    the size of an element.
+                </p>
+
+            </div>
+
+
+            <!-- Skew -->
+
+            <div class="card">
+
+                <div class="shape skew">
+                    Tilt
+                </div>
+
+                <h3>Skew</h3>
+
+                <p>
+                    Slants an element along
+                    the X or Y axis.
+                </p>
+
+            </div>
+
+
+            <!-- 3D -->
+
+            <div class="card scene">
+
+                <div class="shape rotate3d">
+                    3D
+                </div>
+
+                <h3>3D Rotation</h3>
+
+                <p>
+                    Rotates the element around
+                    multiple 3D axes.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Explanation -->
+
+        <div class="information">
+
+            <h2>
+                Transformation Types
+            </h2>
+
+            <ul>
+
+                <li>
+                    <strong>Translate:</strong>
+                    Changes the position of an element.
+                </li>
+
+                <li>
+                    <strong>Rotate:</strong>
+                    Turns an element by a specified angle.
+                </li>
+
+                <li>
+                    <strong>Scale:</strong>
+                    Changes the size of an element.
+                </li>
+
+                <li>
+                    <strong>Skew:</strong>
+                    Slants the element along an axis.
+                </li>
+
+                <li>
+                    <strong>3D Rotate:</strong>
+                    Rotates an element around X, Y and Z axes.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 CSS Transformation Lab
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
+

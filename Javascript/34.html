@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>34. Counter</title>
+<style>
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#11998e,#38ef7d)}
+.box{background:white;padding:35px;border-radius:20px;text-align:center;width:320px;box-shadow:0 15px 30px #0004}
+h2{color:#333}#count{font-size:55px;font-weight:bold;color:#11998e;margin:25px}
+button{width:65px;height:50px;margin:5px;border:0;border-radius:10px;font-size:25px;color:white;cursor:pointer}
+.minus{background:#e74c3c}.plus{background:#27ae60}button:hover{transform:scale(1.08)}
+</style></head>
+<body><div class="box"><h2>🔢 Counter</h2>
+<div id="count">0</div><button class="minus" onclick="change(-1)">−</button>
+<button class="plus" onclick="change(1)">+</button></div>
+<script>
+let count=0;
+function change(amount){count+=amount;document.getElementById("count").textContent=count;}
+</script></body></html>

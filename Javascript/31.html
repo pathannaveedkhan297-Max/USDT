@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>31. Form Validation</title>
+<style>
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#11998e,#38ef7d)}
+form{background:white;padding:30px;border-radius:18px;width:350px;box-shadow:0 15px 30px #0004}h2{text-align:center;color:#333}
+input{width:100%;padding:12px;margin:7px 0;border:1px solid #ddd;border-radius:8px}button{width:100%;padding:12px;background:#11998e;color:white;border:0;border-radius:8px;cursor:pointer}
+button:hover{background:#087f6b}.error{color:#e74c3c;font-size:14px;margin-top:12px}.success{color:#27ae60}
+</style></head>
+<body><form onsubmit="return validateAll()"><h2>📝 Registration</h2>
+<input id="name" placeholder="Full Name"><input id="email" placeholder="Email Address"><input id="phone" placeholder="10 Digit Phone">
+<input id="password" type="password" placeholder="Password (6+ characters)"><button>Submit</button><div id="errors" class="error"></div></form>
+<script>
+function validateAll(){let n=name.value.trim(),e=email.value.trim(),p=phone.value.trim(),pw=password.value,a=[];
+if(n.length<2)a.push("Name must have 2+ characters.");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))a.push("Invalid email.");
+if(!/^\d{10}$/.test(p))a.push("Phone must contain 10 digits.");if(pw.length<6)a.push("Password needs 6+ characters.");
+errors.innerHTML=a.join("<br>");if(!a.length){errors.className="success";errors.textContent="✅ All fields are valid!";}return false;}
+</script></body></html>

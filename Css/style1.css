@@ -1,0 +1,31 @@
+h1, h2 {
+    color: #00695c;
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.box {
+    background-color: #e0f2f1;
+    padding: 28px;
+    margin: 30px auto;
+    border: 3px solid #00897b;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #263238;
+    width: 70%;
+    box-shadow: 0 6px 18px rgba(0, 105, 92, 0.25);
+    transition: all 0.4s ease;
+}
+
+.box:hover {
+    background-color: #80cbc4;
+    color: #ffffff;
+    border-color: #004d40;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 77, 64, 0.35);
+}

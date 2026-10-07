@@ -1,0 +1,418 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>61. CSS Grid Template Areas</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #263238;
+        }
+
+        /* Main Grid Layout */
+        .dashboard {
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 230px 1fr 260px;
+
+            grid-template-rows: 75px 1fr 65px;
+
+            grid-template-areas:
+                "topbar topbar topbar"
+                "sidebar content widgets"
+                "bottom bottom bottom";
+        }
+
+        /* Top Bar */
+        header {
+            grid-area: topbar;
+
+            background: #6a1b9a;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header span {
+            font-size: 14px;
+            background: #8e24aa;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        /* Sidebar */
+        nav {
+            grid-area: sidebar;
+
+            background: #311b92;
+            color: white;
+
+            padding: 30px 20px;
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #ce93d8;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            padding: 13px 10px;
+            margin-bottom: 8px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+        }
+
+        nav li:hover {
+            background: #4527a0;
+        }
+
+        /* Main Content */
+        main {
+            grid-area: content;
+
+            background: #ffffff;
+
+            padding: 35px;
+
+            overflow-y: auto;
+        }
+
+        main h2 {
+            margin-top: 0;
+            color: #4527a0;
+            font-size: 28px;
+        }
+
+        .welcome {
+            background: #ede7f6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .welcome h3 {
+            margin-top: 0;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(160px, 1fr));
+
+            gap: 18px;
+        }
+
+        .card {
+            background: #fafafa;
+
+            border: 1px solid #e0e0e0;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #6a1b9a;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #607d8b;
+        }
+
+        /* Right Side Widgets */
+        aside {
+            grid-area: widgets;
+
+            background: #f3e5f5;
+
+            padding: 25px;
+        }
+
+        aside h3 {
+            color: #6a1b9a;
+            margin-top: 0;
+        }
+
+        .widget {
+            background: white;
+
+            padding: 18px;
+
+            margin-bottom: 18px;
+
+            border-radius: 10px;
+
+            border-left: 5px solid #ab47bc;
+        }
+
+        .widget strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            grid-area: bottom;
+
+            background: #212121;
+
+            color: #eeeeee;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 14px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 850px) {
+
+            .dashboard {
+                grid-template-columns: 180px 1fr;
+
+                grid-template-rows:
+                    70px
+                    1fr
+                    auto
+                    60px;
+
+                grid-template-areas:
+                    "topbar topbar"
+                    "sidebar content"
+                    "widgets widgets"
+                    "bottom bottom";
+            }
+
+            aside {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 15px;
+            }
+
+            aside h3 {
+                grid-column: 1 / -1;
+            }
+
+            .widget {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .dashboard {
+                display: block;
+            }
+
+            header {
+                height: 70px;
+            }
+
+            nav {
+                padding: 20px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            nav li {
+                margin: 0;
+            }
+
+            main {
+                padding: 25px 18px;
+            }
+
+            aside {
+                display: block;
+            }
+
+            .widget {
+                margin-bottom: 15px;
+            }
+
+            footer {
+                height: 60px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Header -->
+        <header>
+
+            <h1>Creative Dashboard</h1>
+
+            <span>Welcome Back!</span>
+
+        </header>
+
+
+        <!-- Navigation -->
+        <nav>
+
+            <h3>Navigation</h3>
+
+            <ul>
+                <li>🏠 Dashboard</li>
+                <li>📊 Analytics</li>
+                <li>📁 Projects</li>
+                <li>👥 Team</li>
+                <li>⚙ Settings</li>
+            </ul>
+
+        </nav>
+
+
+        <!-- Main Content -->
+        <main>
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="welcome">
+
+                <h3>Good Morning!</h3>
+
+                <p>
+                    Welcome to your creative workspace.
+                    Manage your projects and track your progress
+                    from this dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Projects</h3>
+
+                    <p>
+                        24 active projects
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Tasks</h3>
+
+                    <p>
+                        18 tasks completed
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Members</h3>
+
+                    <p>
+                        12 team members
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Progress</h3>
+
+                    <p>
+                        82% completed
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- Aside -->
+        <aside>
+
+            <h3>Quick Updates</h3>
+
+
+            <div class="widget">
+
+                <strong>New Message</strong>
+
+                <span>
+                    You received a new team message.
+                </span>
+
+            </div>
+
+
+            <div class="widget">
+
+                <strong>Project Update</strong>
+
+                <span>
+                    Website redesign is
+```

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Data Fetcher</title>
+<style>
+body{text-align:center;font-family:Arial;background:#e8f0fe;padding:50px}
+button{padding:12px 25px;background:#243b55;color:white;border:0;border-radius:6px;cursor:pointer}
+pre{background:white;padding:20px;margin:20px auto;width:70%;text-align:left}
+</style>
+</head>
+<body>
+<h1>Fetch Data From API</h1>
+<button onclick="loadData()">Fetch Data</button>
+<pre id="output">Click the button to fetch data...</pre>
+<script>
+async function loadData(){
+try{
+let r=await fetch("https://jsonplaceholder.typicode.com/users/1");
+let d=await r.json(); document.getElementById("output").textContent=JSON.stringify(d,null,2);
+}catch(e){document.getElementById("output").textContent="Error: "+e.message;}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>68. Loading Spinner Animation</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f3ff;
+            font-family: Arial;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 8px solid #ddd6fe;
+            border-top: 8px solid #7c3aed;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="loader"></div>
+
+</body>
+</html>
+
+

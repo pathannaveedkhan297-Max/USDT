@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>31. Form Validation</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:#101820}
+form{background:#fff;padding:30px;border-radius:15px;width:320px;box-shadow:0 10px 30px #0008}h2{text-align:center;color:#101820}
+input{width:100%;padding:11px;margin:7px 0;border:1px solid #ccc;border-radius:6px;box-sizing:border-box}
+button{width:100%;padding:11px;margin-top:8px;border:0;border-radius:6px;background:#00a896;color:white;font-size:16px;cursor:pointer}
+button:hover{background:#007f73}.error{color:#e63946;margin-top:12px;font-size:13px}.success{color:#00a896}
+</style></head>
+<body><form onsubmit="return validate()"><h2>🔐 Create Account</h2>
+<input id="name" placeholder="Full Name"><input id="email" placeholder="Email">
+<input id="phone" placeholder="Phone Number"><input id="password" type="password" placeholder="Password">
+<button>Create Account</button><div id="msg"></div></form>
+<script>
+function validate(){let n=name.value.trim(),e=email.value.trim(),p=phone.value.trim(),w=password.value,m=[];
+if(n.length<2)m.push("Enter a valid name.");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))m.push("Enter a valid email.");
+if(!/^\d{10}$/.test(p))m.push("Phone must contain 10 digits.");if(w.length<6)m.push("Password needs 6+ characters.");
+msg.className=m.length?"error":"success";msg.innerHTML=m.length?m.join("<br>"):"✅ Registration successful!";return false;}
+</script></body></html>

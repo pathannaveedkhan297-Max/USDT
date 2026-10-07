@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>46. Responsive Login</title>
+<style>
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;background:linear-gradient(135deg,#667eea,#764ba2)}
+form{background:white;padding:35px;border-radius:18px;width:90%;max-width:360px;box-shadow:0 15px 30px #0005;text-align:center}h2{color:#444}
+input{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:8px}button{width:100%;padding:13px;background:#667eea;color:white;border:0;border-radius:8px;cursor:pointer}
+button:hover{background:#4d63c5}.error{color:#e63946;margin-top:15px;font-size:14px}
+</style></head>
+<body><form onsubmit="return validateLogin()"><h2>🔐 Welcome Back</h2>
+<input id="email" type="email" placeholder="Enter Email"><input id="password" type="password" placeholder="Enter Password">
+<button type="submit">Login</button><div id="error" class="error"></div></form>
+<script>
+function validateLogin(){
+let email=document.getElementById("email").value.trim(),pass=document.getElementById("password").value,error=document.getElementById("error");
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){error.textContent="❌ Enter a valid email.";return false;}
+if(pass.length<6){error.textContent="❌ Password needs 6+ characters.";return false;}
+error.textContent="";alert("✅ Login successful!");return false;
+}
+</script></body></html>
